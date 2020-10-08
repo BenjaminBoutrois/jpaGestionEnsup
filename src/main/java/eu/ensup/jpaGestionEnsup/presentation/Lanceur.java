@@ -10,7 +10,9 @@ import javax.persistence.Persistence;
 
 import eu.ensup.jpaGestionEnsup.domaine.Course;
 import eu.ensup.jpaGestionEnsup.domaine.Student;
+import eu.ensup.jpaGestionEnsup.domaine.User;
 import eu.ensup.jpaGestionEnsup.service.CourseService;
+import eu.ensup.jpaGestionEnsup.service.UserService;
 
 public class Lanceur
 {
@@ -47,6 +49,21 @@ public class Lanceur
     	CourseService courseService = new CourseService(entityManager);
     	
     	courseService.associateCourse(course3.getThemeCourse(), student.getId());
+    	
+    	System.out.println(courseService.getAllCourses());
+    	
+    	User user = new User("admin", "admin");
+    	
+    	EntityTransaction transaction2 = entityManager.getTransaction();
+    	transaction2.begin();
+    	
+    	entityManager.persist(user);
+    	
+    	transaction2.commit();
+    	
+    	UserService userService = new UserService(entityManager);
+    	
+    	System.out.println(userService.getUser(user.getLogin(), user.getPassword()));
     	
     	// 6 : Fermeture unité de travail JPA
     	entityManager.close();

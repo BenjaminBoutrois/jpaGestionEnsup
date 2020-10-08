@@ -47,6 +47,6 @@ public class CourseDao
 
 	public List<Course> getAllCourses()
 	{
-    	return entityManager.createQuery("SELECT * FROM course", Course.class).getResultList();
+    	return entityManager.createQuery("SELECT c FROM Course c", Course.class).getResultList();
 	}
 }
