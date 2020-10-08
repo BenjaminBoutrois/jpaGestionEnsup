@@ -10,6 +10,7 @@ import javax.persistence.Persistence;
 
 import eu.ensup.jpaGestionEnsup.domaine.Course;
 import eu.ensup.jpaGestionEnsup.domaine.Student;
+import eu.ensup.jpaGestionEnsup.service.CourseService;
 
 public class Lanceur
 {
@@ -28,24 +29,24 @@ public class Lanceur
     	// 3 : Instanciation objet métier
     	Course course1 = new Course("GTM", 7);
     	Course course2 = new Course("Anglais", 7);
+    	Course course3 = new Course("Communication", 7);
     	
     	Collection<Course> courses = new ArrayList<Course>();
     	courses.add(course1);
     	courses.add(course2);
     	
     	Student student = new Student("Benjamin", "Boutrois", "bb28@gmail.com", "14 rue Machin", "0607080910", courses);
-//    	Formation formationIntra = new FormationIntra("Sall", "niveau 2");
-//    	Formation formationInter = new FormationInter("JPA", 8);
-//    	Formation formation = new Formation("JAVASE");
-//    	
-//    	// 4 : Persistance objet/relationnel : création d'un enregistrement en base
+
+    	// 4 : Persistance objet/relationnel : création d'un enregistrement en base
     	entityManager.persist(student);
-//    	entityManager.persist(formationIntra);
-//    	entityManager.persist(formationInter);
-//    	entityManager.persist(formation);
+    	entityManager.persist(course3);
     	
     	// 5 : Fermeture transaction
     	transaction.commit();
+    	
+    	CourseService courseService = new CourseService(entityManager);
+    	
+    	courseService.associateCourse(course3.getThemeCourse(), student.getId());
     	
     	// 6 : Fermeture unité de travail JPA
     	entityManager.close();
