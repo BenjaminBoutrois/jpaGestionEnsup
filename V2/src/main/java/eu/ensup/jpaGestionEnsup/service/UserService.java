@@ -2,6 +2,7 @@ package eu.ensup.jpaGestionEnsup.service;
 
 import javax.persistence.EntityManager;
 
+import eu.ensup.jpaGestionEnsup.dao.IUserDao;
 import eu.ensup.jpaGestionEnsup.dao.UserDao;
 import eu.ensup.jpaGestionEnsup.domaine.User;
 
@@ -10,11 +11,11 @@ import eu.ensup.jpaGestionEnsup.domaine.User;
  * @author 33651
  *
  */
-public class UserService
+public class UserService implements IUserService
 {
 	// Fields
 	
-	UserDao dao;
+	IUserDao dao;
 	
 	// Constructors
 
@@ -28,12 +29,10 @@ public class UserService
 		dao = new UserDao(entityManager);
 	}
 	
-	/**
-	 * Retourne un utilisateur en fonction de son login et son mot de passe.
-	 * @param login Le login de l'utilisateur à chercher.
-	 * @param password Le mot de passe de l'utilisateur à chercher.
-	 * @return L'utilisateur correspondant au login et mot de passe.
+	/* (non-Javadoc)
+	 * @see eu.ensup.jpaGestionEnsup.service.IUserService#getUser(java.lang.String, java.lang.String)
 	 */
+	@Override
 	public User getUser(String login, String password)
 	{
 		return dao.getUser(login, password);

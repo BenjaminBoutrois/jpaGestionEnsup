@@ -13,7 +13,7 @@ import eu.ensup.jpaGestionEnsup.domaine.Student;
  * @author 33651
  *
  */
-public class CourseDao
+public class CourseDao implements ICourseDao
 {
 	// Fields
 	
@@ -32,11 +32,10 @@ public class CourseDao
 	
 	// Methods
 	
-	/**
-	 * Associe un cours à un étudiant.
-	 * @param courseTheme Le theme du cours.
-	 * @param idStudent L'id de l'étudiant à qui associer le cours.
+	/* (non-Javadoc)
+	 * @see eu.ensup.jpaGestionEnsup.dao.ICourseDao#associateCourse(java.lang.String, int)
 	 */
+	@Override
 	public void associateCourse(String courseTheme, int idStudent)
 	{
     	Student student = entityManager.find(Student.class, idStudent);
@@ -59,10 +58,10 @@ public class CourseDao
     	transaction.commit();
 	}
 
-	/**
-	 * Retourne tous les cours de la base de données.
-	 * @return La liste de tous les cours de la base de données.
+	/* (non-Javadoc)
+	 * @see eu.ensup.jpaGestionEnsup.dao.ICourseDao#getAllCourses()
 	 */
+	@Override
 	public List<Course> getAllCourses()
 	{
     	return entityManager.createQuery("SELECT c FROM Course c", Course.class).getResultList();

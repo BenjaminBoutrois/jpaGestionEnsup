@@ -13,6 +13,8 @@ import eu.ensup.jpaGestionEnsup.domaine.Course;
 import eu.ensup.jpaGestionEnsup.domaine.Student;
 import eu.ensup.jpaGestionEnsup.domaine.User;
 import eu.ensup.jpaGestionEnsup.service.CourseService;
+import eu.ensup.jpaGestionEnsup.service.ICourseService;
+import eu.ensup.jpaGestionEnsup.service.IUserService;
 import eu.ensup.jpaGestionEnsup.service.UserService;
 
 /**
@@ -52,7 +54,7 @@ public class Lanceur
     	// 5 : Fermeture transaction
     	transaction.commit();
     	
-    	CourseService courseService = new CourseService(entityManager);
+    	ICourseService courseService = new CourseService(entityManager);
     	
     	courseService.associateCourse(course3.getThemeCourse(), student.getId());
     	
@@ -67,7 +69,7 @@ public class Lanceur
     	
     	transaction2.commit();
     	
-    	UserService userService = new UserService(entityManager);
+    	IUserService userService = new UserService(entityManager);
     	
     	System.out.println(userService.getUser(user.getLogin(), user.getPassword()));
     	

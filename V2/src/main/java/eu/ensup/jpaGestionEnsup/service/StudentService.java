@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 
+import eu.ensup.jpaGestionEnsup.dao.IStudentDao;
 import eu.ensup.jpaGestionEnsup.dao.StudentDao;
 import eu.ensup.jpaGestionEnsup.domaine.Student;
 
@@ -12,11 +13,11 @@ import eu.ensup.jpaGestionEnsup.domaine.Student;
  * @author 33651
  *
  */
-public class StudentService
+public class StudentService implements IStudentService
 {
 	// Fields
 	
-	private StudentDao studentDao;
+	private IStudentDao studentDao;
 
 	// Constructors
 	
@@ -28,57 +29,55 @@ public class StudentService
 
 	// Methods
 	
-	/**
-	 * Crée un étudiant en base de données.
-	 * @param student L'étudiant à créer.
+	/* (non-Javadoc)
+	 * @see eu.ensup.jpaGestionEnsup.service.IStudentService#createStudent(eu.ensup.jpaGestionEnsup.domaine.Student)
 	 */
+	@Override
 	public void createStudent(Student student)
 	{
 		studentDao.createStudent(student);
 	}
 	
-	/**
-	 * Retourne un étudiant en fonction de son id.
-	 * @param id L'id de l'étudiant à chercher.
-	 * @return L'étudiant dont l'id correspond.
+	/* (non-Javadoc)
+	 * @see eu.ensup.jpaGestionEnsup.service.IStudentService#getStudent(int)
 	 */
+	@Override
 	public Student getStudent(int id)
 	{
 		return studentDao.getStudent(id);
 	}
 	
-	/**
-	 * Retourne un étudiant en fonction de son adresse mail.
-	 * @param mail L'adresse mail de l'étudiant.
-	 * @return L'étudiant dont l'adresse mail correspond.
+	/* (non-Javadoc)
+	 * @see eu.ensup.jpaGestionEnsup.service.IStudentService#getStudentByMail(java.lang.String)
 	 */
+	@Override
 	public Student getStudentByMail(String mail)
 	{
 		return studentDao.getStudentByMail(mail);
 	}
 	
-	/**
-	 * Retourne tous les étudiants de la base de données.
-	 * @return La liste de tous les étudiants de la base de données.
+	/* (non-Javadoc)
+	 * @see eu.ensup.jpaGestionEnsup.service.IStudentService#getAllStudents()
 	 */
+	@Override
 	public List<Student> getAllStudents()
 	{
 		return studentDao.getAllStudents();
 	}
 	
-	/**
-	 * Supprime un étudiant de la base de données en fonction de son id.
-	 * @param id L'id de l'étudiant à supprimer.
+	/* (non-Javadoc)
+	 * @see eu.ensup.jpaGestionEnsup.service.IStudentService#deleteStudent(int)
 	 */
+	@Override
 	public void deleteStudent(int id)
 	{
 		studentDao.deleteStudent(id);
 	}
 	
-	/**
-	 * Met à jour les données d'un étudiant.
-	 * @param student Un objet étudiant avec les nouvelles données.
+	/* (non-Javadoc)
+	 * @see eu.ensup.jpaGestionEnsup.service.IStudentService#updateStudent(eu.ensup.jpaGestionEnsup.domaine.Student)
 	 */
+	@Override
 	public void updateStudent(Student student)
 	{
 		studentDao.updateStudent(student);

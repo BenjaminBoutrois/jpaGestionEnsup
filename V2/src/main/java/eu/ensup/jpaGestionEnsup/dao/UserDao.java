@@ -11,7 +11,7 @@ import eu.ensup.jpaGestionEnsup.domaine.User;
  * @author 33651
  *
  */
-public class UserDao
+public class UserDao implements IUserDao
 {
 	// Fields
 	
@@ -31,12 +31,10 @@ public class UserDao
 	
 	// Methods
 
-	/**
-	 * Retourne un utilisateur en fonction de son login et mot de masse.
-	 * @param login Le login de l'utilisateur.
-	 * @param password Le mot de passe de l'utilisateur.
-	 * @return L'utilisateur dont le login et mot de passe correspondent.
+	/* (non-Javadoc)
+	 * @see eu.ensup.jpaGestionEnsup.dao.IUserDao#getUser(java.lang.String, java.lang.String)
 	 */
+	@Override
 	public User getUser(String login, String password)
 	{
 		List<User> users = entityManager.createQuery("SELECT u FROM User u", User.class).getResultList();

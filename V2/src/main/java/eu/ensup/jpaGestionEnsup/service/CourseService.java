@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 
 import eu.ensup.jpaGestionEnsup.dao.CourseDao;
+import eu.ensup.jpaGestionEnsup.dao.ICourseDao;
 import eu.ensup.jpaGestionEnsup.domaine.Course;
 
 /**
@@ -12,11 +13,11 @@ import eu.ensup.jpaGestionEnsup.domaine.Course;
  * @author 33651
  *
  */
-public class CourseService
+public class CourseService implements ICourseService
 {
 	// Fields
 	
-	CourseDao dao;
+	ICourseDao dao;
 
 	// Constructors
 	
@@ -30,19 +31,18 @@ public class CourseService
 		dao = new CourseDao(entityManager);
 	}
 
-	/**
-	 * Associe un cours à un étudiant.
-	 * @param course Le cours à associer.
-	 * @param id L'id de l'étudiant à qui associer le cours.
+	/* (non-Javadoc)
+	 * @see eu.ensup.jpaGestionEnsup.service.ICourseService#associateCourse(java.lang.String, int)
 	 */
+	@Override
 	public void associateCourse(String course, int id) {
 		dao.associateCourse(course, id);
 	}
 
-	/**
-	 * Retourne tous les cours de la base de données.
-	 * @return La liste des cours de la base de données.
+	/* (non-Javadoc)
+	 * @see eu.ensup.jpaGestionEnsup.service.ICourseService#getAllCourses()
 	 */
+	@Override
 	public List<Course> getAllCourses() {		
 		return dao.getAllCourses();
 	}
