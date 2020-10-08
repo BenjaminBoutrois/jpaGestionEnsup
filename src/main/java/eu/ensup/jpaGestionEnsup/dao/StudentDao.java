@@ -7,6 +7,11 @@ import javax.persistence.EntityTransaction;
 
 import eu.ensup.jpaGestionEnsup.domaine.Student;
 
+/**
+ * Classe CRUD pour les étudiants.
+ * @author 33651
+ *
+ */
 public class StudentDao
 {
 	// Fields
@@ -15,6 +20,10 @@ public class StudentDao
 	
 	// Constructors
 
+	/**
+	 * Construit la classe StudentDao à partir de l'entityManager.
+	 * @param entityManager
+	 */
 	public StudentDao(EntityManager entityManager)
 	{
 		super();
@@ -23,6 +32,10 @@ public class StudentDao
 	
 	// Methods
 	
+	/**
+	 * Crée un étudiant dans la base de données.
+	 * @param student L'instance d'entité Student à créer.
+	 */
 	public void createStudent(Student student)
 	{
 		EntityTransaction entityTransaction = entityManager.getTransaction();
@@ -33,11 +46,21 @@ public class StudentDao
 		entityTransaction.commit();
 	}
 	
+	/**
+	 * Retourne un étudiant en fonction de son id.
+	 * @param id L'id de l'étudiant à chercher.
+	 * @return L'étudiant dont l'id correspond.
+	 */
 	public Student getStudent(int id)
 	{
 		return entityManager.find(Student.class, id);
 	}
 	
+	/**
+	 * Retourne un étudiant en fonction de son adresse mail.
+	 * @param mail Une chaîne de caractères représentant l'adresse mail à chercher.
+	 * @return L'étudiant dont l'adresse mail correspond.
+	 */
 	public Student getStudentByMail(String mail)
 	{
 		List<Student> students = entityManager.createQuery("SELECT s FROM Student s", Student.class).getResultList();
@@ -49,11 +72,19 @@ public class StudentDao
 				.findFirst().get();
 	}
 
+	/**
+	 * Retourne la liste de tous les étudiants de la table student.
+	 * @return La liste de tous les étudiants de la table student.
+	 */
 	public List<Student> getAllStudents()
 	{
 		return entityManager.createQuery("SELECT s FROM Student s", Student.class).getResultList();
 	}
 	
+	/**
+	 * Supprime un étudiant de la base de données.
+	 * @param id L'id de l'étudiant à supprimer.
+	 */
 	public void deleteStudent(int id)
 	{
 		Student student = getStudent(id);
@@ -66,6 +97,10 @@ public class StudentDao
 		entityTransaction.commit();
 	}
 	
+	/**
+	 * Met à jour les données d'un étudiant.
+	 * @param newStudent L'objet Student contenant les données du nouvel étudiant.
+	 */
 	public void updateStudent(Student newStudent)
 	{
 		Student oldStudent = getStudent(newStudent.getId());
@@ -78,6 +113,7 @@ public class StudentDao
 		oldStudent.setAddress(newStudent.getAddress());
 		oldStudent.setMailAddress(newStudent.getMailAddress());
 		oldStudent.setNumberPhone(newStudent.getNumberPhone());
+		oldStudent.setBirthDate(newStudent.getBirthDate());
 		oldStudent.setCourses(newStudent.getCourses());
 		
 		entityTransaction.commit();

@@ -1,6 +1,7 @@
 package eu.ensup.jpaGestionEnsup.domaine;
 
 import java.util.Collection;
+import java.util.Date;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -9,93 +10,128 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+/**
+ * 
+ * @author 33651
+ *
+ */
 @Entity
 public class Student
 {
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	private String firstName;
 	private String lastName;
 	private String mailAddress;
 	private String address;
 	private String numberPhone;
-	
-	@OneToMany(cascade=CascadeType.PERSIST)
+	private Date birthDate;
+
+	@OneToMany(cascade = CascadeType.PERSIST)
 	Collection<Course> courses;
-	
-	public Student() {
+
+	public Student()
+	{
 		super();
 	}
-	
-	public Student(String firstName, String lastName, String mailAddress, String address, String numberPhone, Collection<Course> courses) {
+
+	public Student(String firstName, String lastName, String mailAddress, String address, String numberPhone,
+			Date birthDate, Collection<Course> courses)
+	{
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.mailAddress = mailAddress;
 		this.address = address;
 		this.numberPhone = numberPhone;
+		this.setBirthDate(birthDate);
 		this.courses = courses;
 	}
 
-	public int getId() {
+	public int getId()
+	{
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(int id)
+	{
 		this.id = id;
 	}
 
-	public String getFirstName() {
+	public String getFirstName()
+	{
 		return firstName;
 	}
 
-	public void setFirstName(String firstName) {
+	public void setFirstName(String firstName)
+	{
 		this.firstName = firstName;
 	}
 
-	public String getLastName() {
+	public String getLastName()
+	{
 		return lastName;
 	}
 
-	public void setLastName(String lastName) {
+	public void setLastName(String lastName)
+	{
 		this.lastName = lastName;
 	}
 
-	public String getMailAddress() {
+	public String getMailAddress()
+	{
 		return mailAddress;
 	}
 
-	public void setMailAddress(String mailAddress) {
+	public void setMailAddress(String mailAddress)
+	{
 		this.mailAddress = mailAddress;
 	}
 
-	public String getAddress() {
+	public String getAddress()
+	{
 		return address;
 	}
 
-	public void setAddress(String address) {
+	public void setAddress(String address)
+	{
 		this.address = address;
 	}
 
-	public String getNumberPhone() {
+	public String getNumberPhone()
+	{
 		return numberPhone;
 	}
 
-	public void setNumberPhone(String numberPhone) {
+	public void setNumberPhone(String numberPhone)
+	{
 		this.numberPhone = numberPhone;
 	}
 
-	public Collection<Course> getCourses() {
+	public Collection<Course> getCourses()
+	{
 		return courses;
 	}
 
-	public void setCourses(Collection<Course> courses) {
+	public void setCourses(Collection<Course> courses)
+	{
 		this.courses = courses;
 	}
 
+	public Date getBirthDate()
+	{
+		return birthDate;
+	}
+
+	public void setBirthDate(Date birthDate)
+	{
+		this.birthDate = birthDate;
+	}
+
 	@Override
-	public String toString() {
+	public String toString()
+	{
 		return "Person [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", mailAddress="
 				+ mailAddress + ", address=" + address + ", numberPhone=" + numberPhone + "]";
 	}

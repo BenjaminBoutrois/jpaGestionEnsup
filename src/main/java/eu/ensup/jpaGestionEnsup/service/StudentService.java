@@ -7,6 +7,11 @@ import javax.persistence.EntityManager;
 import eu.ensup.jpaGestionEnsup.dao.StudentDao;
 import eu.ensup.jpaGestionEnsup.domaine.Student;
 
+/**
+ * Classe StudentService : Fait le lien entre le lanceur et le DAO concernant les étudiants.
+ * @author 33651
+ *
+ */
 public class StudentService
 {
 	// Fields

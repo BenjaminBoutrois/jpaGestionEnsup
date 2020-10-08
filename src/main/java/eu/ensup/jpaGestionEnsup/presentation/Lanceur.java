@@ -2,6 +2,7 @@ package eu.ensup.jpaGestionEnsup.presentation;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Date;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -14,6 +15,11 @@ import eu.ensup.jpaGestionEnsup.domaine.User;
 import eu.ensup.jpaGestionEnsup.service.CourseService;
 import eu.ensup.jpaGestionEnsup.service.UserService;
 
+/**
+ * Classe Lanceur : point d'entrée de l'application.
+ * @author 33651
+ *
+ */
 public class Lanceur
 {
 	public static void main(String[] args)
@@ -37,7 +43,7 @@ public class Lanceur
     	courses.add(course1);
     	courses.add(course2);
     	
-    	Student student = new Student("Benjamin", "Boutrois", "bb28@gmail.com", "14 rue Machin", "0607080910", courses);
+    	Student student = new Student("Benjamin", "Boutrois", "bb28@gmail.com", "14 rue Machin", "0607080910", new Date(), courses);
 
     	// 4 : Persistance objet/relationnel : création d'un enregistrement en base
     	entityManager.persist(student);
