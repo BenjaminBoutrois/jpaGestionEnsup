@@ -5,6 +5,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+/**
+ * Classe métier représentant un utilisateur.
+ * @author 33651
+ *
+ */
 @Entity
 public class User
 {

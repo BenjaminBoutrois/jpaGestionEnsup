@@ -11,7 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 /**
- * 
+ * Classe métier représentant un étudiant.
  * @author 33651
  *
  */
@@ -36,6 +36,16 @@ public class Student
 		super();
 	}
 
+	/**
+	 * Construit un Student.
+	 * @param firstName
+	 * @param lastName
+	 * @param mailAddress
+	 * @param address
+	 * @param numberPhone
+	 * @param birthDate
+	 * @param courses
+	 */
 	public Student(String firstName, String lastName, String mailAddress, String address, String numberPhone,
 			Date birthDate, Collection<Course> courses)
 	{

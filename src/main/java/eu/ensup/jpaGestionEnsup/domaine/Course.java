@@ -2,7 +2,11 @@ package eu.ensup.jpaGestionEnsup.domaine;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-
+/**
+ * Classe métier représentant un cours.
+ * @author 33651
+ *
+ */
 @Entity
 public class Course
 {
