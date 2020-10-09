@@ -3,6 +3,7 @@
 Gestion Ensup avec JPA et Hibernate.
 
 ## Prérequis
+
 - JDK 8
 - Maven 3.6.3
 - Un serveur MySQL
