@@ -43,6 +43,7 @@ public class UserDao implements IUserDao
     	EntityTransaction tx = entityManager.getTransaction();
     	
     	tx.begin();
+    	
     	tx.commit();
     	
 		List<User> users = entityManager.createQuery("SELECT u FROM User u", User.class).getResultList();
