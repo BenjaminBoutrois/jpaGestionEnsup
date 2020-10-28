@@ -2,4 +2,4 @@
 
 Gestion Ensup avec JPA et Hibernate
 
-Cliquer sur une version pour accéder à leur Readme.
+Cliquer sur une version pour accéder à son Readme.
