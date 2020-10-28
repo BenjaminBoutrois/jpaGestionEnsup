@@ -13,7 +13,7 @@ Gestion Ensup avec JPA et Hibernate.
 ## Installation
 
 1. Cloner le dépôt
-2. Créer une base de données appelée "jpagestionensup"
+2. Créer une base de données en la nommant **jpagestionensup**
 3. A la racine du projet V3, ouvrir un invite de commande et taper l'instruction `mvn clean package` pour compiler le projet
 4. Une fois compilé, copier le fichier **V3\web\target\web.war** dans le dossier **webapps** du serveur Tomcat
 5. Lancer le serveur Tomcat pour déployer le projet sur le serveur
