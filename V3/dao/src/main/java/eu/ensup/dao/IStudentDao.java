@@ -41,9 +41,10 @@ public interface IStudentDao
 
 	/**
 	 * Met à jour les données d'un étudiant.
+	 * @param oldStudentId L'id de l'étudiant à modifier.
 	 * @param newStudent L'objet Student contenant les données du nouvel étudiant.
 	 */
-	void updateStudent(Student newStudent);
+	void updateStudent(int oldStudentId, Student newStudent);
 	
 	/**
 	 * Recherche un ou plusieurs étudiants en fonction de leur données.

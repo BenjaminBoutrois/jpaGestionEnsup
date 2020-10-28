@@ -26,7 +26,7 @@ public class Student
 	private String mailAddress;
 	private String address;
 	private String numberPhone;
-	private Date birthDate;
+	private String birthDate;
 
 	@OneToMany(cascade = CascadeType.PERSIST)
 	Collection<Course> courses;
@@ -47,7 +47,7 @@ public class Student
 	 * @param courses
 	 */
 	public Student(String firstName, String lastName, String mailAddress, String address, String numberPhone,
-			Date birthDate, Collection<Course> courses)
+			String birthDate, Collection<Course> courses)
 	{
 		super();
 		this.firstName = firstName;
@@ -70,7 +70,7 @@ public class Student
 	 * @param courses
 	 */
 	public Student(String firstName, String lastName, String mailAddress, String address, String numberPhone,
-			Date birthDate)
+			String birthDate)
 	{
 		super();
 		this.firstName = firstName;
@@ -151,12 +151,12 @@ public class Student
 		this.courses = courses;
 	}
 
-	public Date getBirthDate()
+	public String getBirthDate()
 	{
 		return birthDate;
 	}
 
-	public void setBirthDate(Date birthDate)
+	public void setBirthDate(String birthDate)
 	{
 		this.birthDate = birthDate;
 	}

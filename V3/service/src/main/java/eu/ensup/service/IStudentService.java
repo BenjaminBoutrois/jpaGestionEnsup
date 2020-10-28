@@ -41,9 +41,10 @@ public interface IStudentService
 
 	/**
 	 * Met à jour les données d'un étudiant.
+	 * @param oldStudentId L'id de l'étudiant à modifier.
 	 * @param student Un objet étudiant avec les nouvelles données.
 	 */
-	void updateStudent(Student student);
+	void updateStudent(int oldStudentId, Student student);
 
 	/**
 	 * Recherche un ou plusieurs étudiants en fonction de leur données.

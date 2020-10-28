@@ -1,7 +1,6 @@
 package servlets;
 
 import java.io.IOException;
-import java.text.DateFormat;
 import java.util.Collections;
 import java.util.List;
 
@@ -55,14 +54,13 @@ public class ModifyStudentServlet extends HttpServlet
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
-		DateFormat df = DateFormat.getDateInstance();
 		Student student = null;
 		
 		try
 		{
 			student = new Student(request.getParameter("firstName"), request.getParameter("lastName"),
 					request.getParameter("mailAddress"), request.getParameter("address"),
-					request.getParameter("numberPhone"), df.parse(request.getParameter("birthDate")));
+					request.getParameter("numberPhone"), request.getParameter("birthDate"));
 		}
 		catch (Exception e)
 		{
@@ -73,7 +71,7 @@ public class ModifyStudentServlet extends HttpServlet
 		session.setAttribute("student", null);
 		user = (User) session.getAttribute("user");
 
-		studentService.updateStudent(student);
+		studentService.updateStudent(Integer.parseInt(request.getParameter("id")), student);
 
 		session.setAttribute("student", null);
 		session.setAttribute("students", getAllStudents());

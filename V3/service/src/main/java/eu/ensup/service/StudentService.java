@@ -72,9 +72,9 @@ public class StudentService implements IStudentService
 	/* (non-Javadoc)
 	 * @see eu.ensup.jpaGestionEnsup.service.IStudentService#updateStudent(eu.ensup.jpaGestionEnsup.domaine.Student)
 	 */
-	public void updateStudent(Student student)
+	public void updateStudent(int oldStudentId, Student student)
 	{
-		studentDao.updateStudent(student);
+		studentDao.updateStudent(oldStudentId, student);
 	}
 	
 	/**

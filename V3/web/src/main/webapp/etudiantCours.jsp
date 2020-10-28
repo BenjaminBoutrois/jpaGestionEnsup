@@ -12,7 +12,7 @@
 	<%
 	List<Course> courses = (List<Course>) session.getAttribute("courses");
 	%>
-	<h1>Associer un cours à un etudiant</h1>
+	<h1>Associer un cours à un étudiant</h1>
 	<form action="EtudiantCoursServlet" method="post">
 	<br/><br/>
 	<% Student student = (Student) session.getAttribute("student");%>

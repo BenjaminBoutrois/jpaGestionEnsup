@@ -43,14 +43,14 @@
 				</div>
 
 				<div class="md-form md-outline mt-0">
-					<input type="text" id="mailAdresse" class="form-control" name="mailAdresse" value="<%=student.getMailAddress()%>"> 
-					<label for="mailAdresse">Adresse mail</label>
+					<input type="text" id="mailAddress" class="form-control" name="mailAddress" value="<%=student.getMailAddress()%>"> 
+					<label for="mailAddress">Adresse mail</label>
 				</div>
 				
 				
 				<div class="md-form md-outline">
-					<input  id="adress" class="form-control" name="adress" value="<%=student.getAddress()%>" >
-					<label for="adress">Adresse</label>
+					<input  id="address" class="form-control" name="address" value="<%=student.getAddress()%>" >
+					<label for="address">Adresse</label>
 				</div>
 				
 				<div class="md-form md-outline mt-0">
@@ -59,8 +59,8 @@
 				</div>				
 				
 				<div class="md-form md-outline mt-0">
-					<input type="date" id="dateOfBirth" name="dateOfBirth" class="form-control" value="<%=student.getBirthDate()%>">
-					<label for="dateOfBirth">Date de naissance - (format yyyy-mm-dd)</label>
+					<input type="date" id="birthDate" name="birthDate" class="form-control" value="<%=student.getBirthDate()%>">
+					<label for="birthDate">Date de naissance - (format yyyy-mm-dd)</label>
 				</div>
 				<div class="md-form md-outline mt-0"  style="visibility:hidden;">
 					<input type="text" id="id" name="id" class="form-control" value="<%=student.getId()%>">

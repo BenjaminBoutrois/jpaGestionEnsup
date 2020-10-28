@@ -121,7 +121,7 @@ public class StudentDao implements IStudentDao
     	
     	EntityManager entityManager = entityManagerFactory.createEntityManager();
     	
-		Student student = getStudent(id);
+		Student student = entityManager.merge(getStudent(id));
 		
 		EntityTransaction entityTransaction = entityManager.getTransaction();
 		entityTransaction.begin();
@@ -137,14 +137,14 @@ public class StudentDao implements IStudentDao
 	/* (non-Javadoc)
 	 * @see eu.ensup.jpaGestionEnsup.dao.IStudentDao#updateStudent(eu.ensup.jpaGestionEnsup.domaine.Student)
 	 */
-	public void updateStudent(Student newStudent)
+	public void updateStudent(int oldStudentId, Student newStudent)
 	{
 		EntityManagerFactory entityManagerFactory =
     			Persistence.createEntityManagerFactory("demojpa-pu");
     	
     	EntityManager entityManager = entityManagerFactory.createEntityManager();
     	
-		Student oldStudent = getStudent(newStudent.getId());
+		Student oldStudent = entityManager.merge(getStudent(oldStudentId));
 		
 		EntityTransaction entityTransaction = entityManager.getTransaction();
 		entityTransaction.begin();

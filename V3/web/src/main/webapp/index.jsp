@@ -106,7 +106,7 @@
                     </div>
                     <!-- Footer About Text-->
                     <div class="col-lg-4">
-                        <h4 class="text-uppercase mb-4">A propos du développeur</h4>
+                        <h4 class="text-uppercase mb-4">A propos du dï¿½veloppeur</h4>
                         <p class="lead mb-0">
                             Master ED2O
                         </p>
@@ -116,7 +116,7 @@
         </footer>
         <!-- Copyright Section-->
         <div class="copyright py-4 text-center text-white">
-            <div class="container"><small>Copyright © Master ED2O</small></div>
+            <div class="container"><small>Copyright ï¿½ Master ED2O</small></div>
         </div>
         <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes)-->
         <div class="scroll-to-top d-lg-none position-fixed">
@@ -148,7 +148,7 @@
                                     <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
                                     <button class="btn btn-primary" data-dismiss="modal">
                                         <i class="fas fa-times fa-fw"></i>
-                                        Fermer la fenêtre
+                                        Fermer la fenï¿½tre
                                     </button>
                                 </div>
                             </div>
@@ -182,7 +182,7 @@
                                     <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
                                     <button class="btn btn-primary" data-dismiss="modal">
                                         <i class="fas fa-times fa-fw"></i>
-                                        Fermer la fenêtre
+                                        Fermer la fenï¿½tre
                                     </button>
                                 </div>
                             </div>

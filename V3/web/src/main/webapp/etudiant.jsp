@@ -101,11 +101,11 @@
 
 						<ul>
 							<li>
-								<a href="EditerEtudiantServlet?id=<%=student.getId()%>" >Edit</a>				
+								<a href="EditerEtudiantServlet?id=<%=student.getId()%>" >Editer</a>				
 								
-								<a href="SupprimerEtudiantServlet?id=<%=student.getId()%>" style="color:red">Delete</a>
+								<a href="SupprimerEtudiantServlet?id=<%=student.getId()%>" style="color:red">Supprimer</a>
 								
-								<a href="ViewEtudiantServlet?id=<%=student.getId()%>" style="color:blue">View</a>
+								<a href="ViewEtudiantServlet?id=<%=student.getId()%>" style="color:blue">Voir</a>
 								
 								<a href="EtudiantCoursServlet?id=<%=student.getId()%>" style="color:blue">Cours</a>
 								

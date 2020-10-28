@@ -40,14 +40,14 @@
 				</div>
 
 				<div class="md-form md-outline mt-0">				
-					<label for="mailAdresse">Adresse mail</label>
-					<input type="text" id="mailAdresse" class="form-control" name="mailAdresse"> 
+					<label for="mailAddress">Adresse mail</label>
+					<input type="text" id="mailAddress" class="form-control" name="mailAddress"> 
 				</div>
 				
 				
 				<div class="md-form md-outline">	
-					<label for="adress">Adresse</label>
-					<textarea  id="adress" class="form-control"	name="adress"></textarea>
+					<label for="address">Adresse</label>
+					<textarea  id="address" class="form-control" name="address"></textarea>
 				</div>
 				
 				<div class="md-form md-outline mt-0"  type ="hidden;">
@@ -56,8 +56,8 @@
 				</div>				
 				
 				<div class="md-form md-outline mt-0">
-					<label for="dateOfBirth">Date de naissance (format yyyy-mm-dd)</label>
-					<input type="date" id="dateOfBirth" name="dateOfBirth" class="form-control">
+					<label for="birthDate">Date de naissance (format yyyy-mm-dd)</label>
+					<input type="date" id="birthDate" name="birthDate" class="form-control">
 				</div>
 			
 								
