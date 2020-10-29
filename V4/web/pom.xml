@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  
+  <parent>
+    <groupId>eu.ensup</groupId>
+    <artifactId>jpaGestionEnsupV3</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  
+  <groupId>eu.ensup</groupId>
+  <artifactId>web</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
+  
+  <name>web Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+  
+  <dependencies>
+  <!-- PROJET -->
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>domaine</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>service</artifactId>
+    </dependency>
+    
+    <!-- SERVLETS -->
+	<dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>4.0.1</version>
+      <scope>provided</scope>
+	</dependency>
+  </dependencies>
+  
+  <build>
+    <finalName>web</finalName>
+  </build>
+</project>
